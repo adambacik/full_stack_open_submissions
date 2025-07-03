@@ -57,7 +57,7 @@ const App = () => {
       <Heading text="Anecdote of the day"/>
       <Anecdote text={anecdotes[selected]}/>
       <Button onClick={vote} text="vote"/>
-      <Button onClick={generateNumber} text="next enecdote"/>
+      <Button onClick={generateNumber} text="next anecdote"/>
       <Heading text="Anecdote with most voted"/>
       <Votes votes={votes} anecdotes={anecdotes}/>
     </div>
