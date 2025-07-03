@@ -9,7 +9,12 @@ const Heading = (props) => {
 }
 
 const Anecdote = (props) => {
-  return <p>{props.text}</p>
+  return (
+    <div>
+      <p>{props.text}</p>
+      <p>has {props.votes} votes</p>
+    </div>
+  )
 }
 
 const Votes = (props) => {
@@ -21,7 +26,7 @@ const Votes = (props) => {
 
   return (
     <div>
-      <Anecdote text={props.anecdotes[index]}/>
+      <Anecdote text={props.anecdotes[index]} votes={props.votes[index]}/>
     </div>
   )
 }
@@ -55,7 +60,7 @@ const App = () => {
   return (
     <div>
       <Heading text="Anecdote of the day"/>
-      <Anecdote text={anecdotes[selected]}/>
+      <Anecdote text={anecdotes[selected]} votes={votes[selected]}/>
       <Button onClick={vote} text="vote"/>
       <Button onClick={generateNumber} text="next anecdote"/>
       <Heading text="Anecdote with most voted"/>
